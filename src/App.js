@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import reducer from './Redux';
 import Incrementer from './Components/Incrementer';
 import Counter from './Components/Counter';
+import Decrementer from './Components/Decrementer';
 
 const store = createStore(reducer, compose(applyMiddleware(thunk)));
 
@@ -14,6 +15,7 @@ const App = () => {
       <Provider store={store}>
         <div>
           <Incrementer />
+          <Decrementer  />
           <Counter />
         </div>
       </Provider>

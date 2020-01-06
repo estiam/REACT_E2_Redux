@@ -1,9 +1,17 @@
-// import React from 'react'
+import React from 'react'
+import { decrementCounter } from '../Redux/counter/actions';
+import { connect } from 'react-redux';
 
-// const Decrementer = () => {
-//   return (
-    
-//   );
-// }
+const Decrementer = ({ decrement }) => {
+  return (
+    <button onClick={decrement}>DECREMENT</button>
+  );
+}
 
-// export default Decrementer;
+const mapDispatchToProps = dispatch => ({
+  decrement: () => {
+    dispatch(decrementCounter());
+  }
+});
+
+export default connect(null, mapDispatchToProps)(Decrementer)
